@@ -16,6 +16,8 @@ app.post("/events", async (req, res) => {
   // Saada sündmus comments teenusele
   await axios.post("http://localhost:5001/events", event).catch(() => {});
 
+  await axios.post("http://localhost:5002/events", event).catch(() => {});
+
   res.send({ status: "OK" });
 });
 
